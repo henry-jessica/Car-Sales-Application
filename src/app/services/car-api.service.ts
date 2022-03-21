@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore'; 
-import { ICar } from "../interfaces/car"; 
-import { Observable } from 'rxjs';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http'
-@Injectable({
-  providedIn: 'root'
-})
+import { Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators'; 
+import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
+import { ICar } from "../interfaces/car"; 
+@Injectable()
+  
 export class CarApiService {
 
   //Service wrapper around the native firestores SDK's
@@ -19,7 +19,7 @@ export class CarApiService {
 
   errorMessage!: string; 
 
-  constructor(private _http: HttpClient, private _afs:AngularFirestore) { 
+  constructor(private _http: HttpClient, private _afs: AngularFirestore) { 
     //connect to the database
     this.carsDataCollection =_afs.collection<ICar>("cars_data"); 
   }
