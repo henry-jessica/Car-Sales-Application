@@ -9,10 +9,12 @@ import { CarlistComponent } from './carlist/carlist.component';
   declarations: [
     AppComponent,
     CarComponent,
-    CarlistComponent
+    CarlistComponent, 
+  
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

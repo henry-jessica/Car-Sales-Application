@@ -2,7 +2,7 @@ import { StringifyOptions } from "querystring";
 
 // As well as the interface we export a class which matches the interface – this allows us to more easily populate Firestore
 
-export interface Car {
+export interface ICar {
     make: string; 
     model: string; 
     year: string; 
